@@ -1,0 +1,26 @@
+configs:
+  params:
+    server.insecure: true
+
+crds:
+  install: true
+  keep: true
+
+
+server:
+  ingress:
+    enabled: true
+    
+    annotations:
+      nginx.ingress.kubernetes.io/force-ssl-redirect: "false"
+      nginx.ingress.kubernetes.io/ssl-passthrough: "true"
+
+    ingressClassName: "nginx"
+
+
+    hosts:
+      - ratatuili.chickenkiller.com
+
+    paths:
+      - /
+    pathType: Prefix
