@@ -1,5 +1,9 @@
 output "openid_connect_provider_arn" {
-  value = aws_iam_openid_connect_provider.default.arn
+  value = aws_iam_openid_connect_provider.eks.arn
+}
+
+output "openid_connect_provider_sub" {
+  value = aws_iam_openid_connect_provider.eks.url
 }
 
 output "endpoint"{

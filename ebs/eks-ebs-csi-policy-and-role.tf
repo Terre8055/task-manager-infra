@@ -22,6 +22,7 @@ output "eks_cluster_ebs_csi_iam_policy_arn" {
 ############################################################################################################
 ### Reference: https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/eks_cluster
 ### Create IAM Policy and associate role with the Policy
+
 data "aws_iam_policy_document" "eks_cluster_ebs_csi_policy" {
   statement {
     actions = ["sts:AssumeRoleWithWebIdentity"]
@@ -32,7 +33,7 @@ data "aws_iam_policy_document" "eks_cluster_ebs_csi_policy" {
     }
     condition {
       test     = "StringEquals"
-      variable = "${var.oidc}:sub"
+      variable = "${var.oidc-sub}:sub"
       values   = ["system:serviceaccount:kube-system:aws-ebs-csi-controller-sa"]
     }
   }
