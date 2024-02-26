@@ -20,8 +20,8 @@ terraform {
 
 
   backend "s3" {
-    bucket         = "gh-bc2-tfstate"
-    key            = "mike-tf/portfolio.tfstate"
+    bucket         = ""
+    key            = ""
     region         = "ap-south-1"
     dynamodb_table = "tf-mike-lock"
     encrypt        = true

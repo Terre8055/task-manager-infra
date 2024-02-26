@@ -13,15 +13,11 @@ variable "region" {
 variable "cluster_name" {
   description = "EKS cluster name"
   type        = string
-  default     = "task-manager-mike-portfolio"
+  default     = ""
 }
 
 variable "tags" {
   description = "Default tags"
   type        = map(string)
-  default = {
-    owner           = "michael.appiah.dankwah"
-    expiration_date = "03-03-2024"
-    bootcamp        = "ghana2"
-  }
+  default = {}
 }

@@ -9,7 +9,6 @@ module "vpc_for_eks" {
 # EKS Cluster
 module "eks_cluster_and_worker_nodes" {
   source = "./eks"
-  # Cluster
   vpc_id                 = module.vpc_for_eks.vpc_id
   cluster_sg_name        = "${var.cluster_name}-cluster-sg"
   nodes_sg_name          = "${var.cluster_name}-node-sg"
@@ -39,6 +38,4 @@ module "helm" {
   source = "./helm-releases"
 }
 
-# module "cert-manager" {
-#   source = "./cert-manager"
-# }
+
