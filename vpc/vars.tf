@@ -46,7 +46,7 @@ variable "public_subnet_tag_name" {
 
 variable "availability_zones" {
   type        = list(string)
-  default     = ["eu-west-1a", "eu-west-1b"]
+  default     = ["eu-west-1a", "eu-west-1b", "us-east-1a"]
   description = "List of availability zones for the selected region"
 }
 
