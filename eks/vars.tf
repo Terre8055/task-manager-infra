@@ -37,9 +37,9 @@ variable "public_subnet_ids" {
 }
 
 variable "ami_type" {
-  description = "Type of Amazon Machine Image (AMI) associated with the EKS Node Group. Defaults to AL2_x86_64. Valid values: AL2_x86_64, AL2_x86_64_GPU."
+  description = "Type of Amazon Machine Image (AMI) associated with the EKS Node Group. Valid values: AL2_x86_64, AL2_x86_64_GPU, BOTTLEROCKET_x86_64, AL2023_x86_64"
   type        = string
-  default     = "AL2_x86_64"
+  default     = "AL2023_x86_64_STANDARD"
 }
 
 variable "disk_size" {
@@ -50,7 +50,7 @@ variable "disk_size" {
 
 variable "instance_types" {
   type        = list(string)
-  default     = ["t3a.large"]
+  default     = ["t3a.medium"]
   description = "Set of instance types associated with the EKS Node Group."
 }
 

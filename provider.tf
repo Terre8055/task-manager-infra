@@ -1,5 +1,6 @@
 provider "aws" {
   region = var.region
+  profile = "mike"
   default_tags {
     tags = var.tags
   }
@@ -11,19 +12,23 @@ terraform {
       source = "hashicorp/aws"
     }
     helm = {
-      version = "2.6.0"
+      version = "3.0.2"
     }
     kubernetes = {
-      version = "2.12.1"
+      version = "2.38.0"
     }
   }
 
 
   backend "s3" {
-    bucket         = ""
-    key            = ""
-    region         = "ap-south-1"
-    dynamodb_table = "tf-mike-lock"
+    bucket         = "little-book-tf-mike"
+    key            = "eks/state.tfstate"
+    region         = "us-east-1"
+    # dynamodb_table = "tf-mike-lock"
+    use_lockfile   = true
+    # assume_role = {
+    #   role_arn = "arn:aws:iam::590183661216:user/terraform-user"
+    # }
     encrypt        = true
   }
 }
@@ -43,4 +48,5 @@ provider "helm" {
 
 provider "kubernetes" {
   config_path = "~/.kube/config"
+  config_context = "mike"
 }
