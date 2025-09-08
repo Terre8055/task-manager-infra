@@ -28,14 +28,14 @@ module "eks_cluster_and_worker_nodes" {
   public_subnet_ids       = module.vpc_for_eks.public_subnet_ids
 }
 
-module "ebs" {
-  source = "./ebs"
-  oidc = module.eks_cluster_and_worker_nodes.openid_connect_provider_arn
-  oidc-sub = module.eks_cluster_and_worker_nodes.openid_connect_provider_sub
-}
+# module "ebs" {
+#   source = "./ebs"
+#   oidc = module.eks_cluster_and_worker_nodes.openid_connect_provider_arn
+#   oidc-sub = module.eks_cluster_and_worker_nodes.openid_connect_provider_sub
+# }
 
-module "helm" {
-  source = "./helm-releases"
-}
+# module "helm" {
+#   source = "./helm-releases"
+# }
 
 

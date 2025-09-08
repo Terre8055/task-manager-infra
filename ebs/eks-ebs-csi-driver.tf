@@ -1,7 +1,7 @@
 resource "aws_eks_addon" "eks_cluster_ebs_csi_addon" {
   cluster_name             = local.eks_cluster_name
   addon_name               = "aws-ebs-csi-driver"
-  addon_version            = "v1.25.0-eksbuild.1"
+  addon_version            = "v1.48.0-eksbuild.1"
   service_account_role_arn = aws_iam_role.eks_cluster_ebs_csi_role.arn
   depends_on = [
     aws_iam_role_policy_attachment.eks_cluster_ebs_csi_role_policy_attach,

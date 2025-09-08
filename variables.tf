@@ -6,14 +6,14 @@ variable "profile" {
 
 variable "region" {
   description = "AWS region to deploy to"
-  default     = "eu-west-1"
+  default     = "us-east-1"
   type        = string
 }
 
 variable "cluster_name" {
   description = "EKS cluster name"
   type        = string
-  default     = ""
+  default     = "little-book"
 }
 
 variable "tags" {

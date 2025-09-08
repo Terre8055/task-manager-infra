@@ -22,13 +22,13 @@ variable "vpc_cidr_block" {
 
 variable "private_subnet_cidr_blocks" {
   type        = list(string)
-  default     = ["10.0.0.0/24", "10.0.1.0/24"]
+  default     = ["10.0.10.0/24", "10.0.11.0/24", "10.0.12.0/24"]
   description = "CIDR block range for the private subnet"
 }
 
 variable "public_subnet_cidr_blocks" {
   type        = list(string)
-  default     = ["10.0.2.0/24", "10.0.3.0/24"]
+  default     = ["10.0.13.0/24", "10.0.14.0/24", "10.0.15.0/24"]
   description = "CIDR block range for the public subnet"
 }
 
@@ -46,7 +46,7 @@ variable "public_subnet_tag_name" {
 
 variable "availability_zones" {
   type        = list(string)
-  default     = ["eu-west-1a", "eu-west-1b"]
+  default     = ["us-east-1a", "us-east-1b", "us-east-1c"]
   description = "List of availability zones for the selected region"
 }
 

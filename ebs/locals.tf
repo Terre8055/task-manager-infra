@@ -1,4 +1,4 @@
 locals {
-  eks_cluster_name = "task-manager-mike-portfolio"
-  name             = "task-manager-mike-portfolio"
+  eks_cluster_name = "little-book"
+  name             = "little-book"
 }
